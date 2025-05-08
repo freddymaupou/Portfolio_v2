@@ -14,7 +14,7 @@ const links = [
     },
 ];
 
-export default function Header(props : {refClick() : void}){
+export default function Header(){
     return (
         <>
         <div className="relative w-screen">
@@ -23,11 +23,6 @@ export default function Header(props : {refClick() : void}){
                     return (
                     <button
                         key={index}
-                        onClick={() => props.refClick()/* {
-                            props.refs[index].current?.scrollIntoView({
-                            behavior: 'smooth',
-                            })} */
-                        }
                         className="m-auto w-1/3 cursor-pointer"
                     >
                         <p className="white text-center">{link.name}</p>
