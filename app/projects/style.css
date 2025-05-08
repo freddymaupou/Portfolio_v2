@@ -1,0 +1,76 @@
+.project {
+    opacity: 0;
+    transform: translate(50px);
+}
+
+@keyframes fadeInBottom {
+    0% {
+        opacity: 0;
+        transform: translate(0px, 50px);
+    };
+    100%{
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes fadeOutUp {
+    0% {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    };
+    100%{
+        opacity: 0;
+        transform: translate(0px, -50px);
+    }
+}
+
+.fade-in-bottom {
+    animation: fadeInBottom 0.7s both;
+}
+
+.fade-out-up {
+    animation: fadeOutUp 0.7s both;
+}
+
+@keyframes fadeOutLeft {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    };
+    100%{
+        opacity: 0;
+        transform: translateX(-500px);
+        display: none;
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-500px);
+    };
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.images {
+    object-fit: contain;
+    width: auto;
+}
+
+.fade-out-left {
+    z-index: -1;
+    animation: fadeOutLeft 0.5s both;
+}
+
+.fade-in-right {
+    z-index: 1;
+    animation: fadeInRight 0.5s both;
+}
+
+li {
+    font-size: 23px;
+}

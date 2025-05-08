@@ -1,26 +1,57 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--borderColor, currentcolor);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@utility text-last-center {
+  text-align-last: center;
+}
+
+@layer utilities {
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+    --borderColor: #2F4DA2;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #0A1020;
+      --foreground: #D3E2FF;
+      --borderColor: #2F4DA2;
+      --grey: #A0A0A2;
+    }
+  }
+
+  body {
+    color: var(--foreground);
+    background: var(--background);
+    border-color: var(--borderColor);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+  }
+
+  form > * {
+    margin-top: 20px;
+  }
 }
