@@ -1,16 +1,49 @@
 'use client'
 
-import Header from "./components/header/page";
+//import Header from "./components/header/page";
 import Image from "next/image";
 import Projects from "./projects/page";
 import Contact from "./contact/page";
 import { useEffect, useRef, useState } from "react";
 
+const links = [
+  { 
+      name: 'Accueil', href: '/'
+  },
+  { 
+      name: 'Projets', href: '/projects'
+  },
+  {
+      name: 'Contact', href: '/contact'
+  },
+];
+
 export default function Home() {
-  const homeRef = useRef<HTMLDivElement | null>(null);
-  const projectsRef = useRef<HTMLDivElement | null>(null);
-  const contactRef = useRef<HTMLDivElement | null>(null);
+  const homeRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
   const [isTop, setIsTop] = useState<boolean>(true);
+
+  function handleRefs(index : number){
+    switch(index){
+      case 0:
+        homeRef.current?.scrollIntoView({
+          behavior: 'smooth'
+        })
+        break;
+      case 1:
+        projectsRef.current?.scrollIntoView({
+          behavior: 'smooth'
+        })
+        break;
+      case 2:
+        contactRef.current?.scrollIntoView({
+          behavior: 'smooth'
+        })
+        break;
+        default:break;
+    }
+  }
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -36,7 +69,22 @@ export default function Home() {
     }
 
     <div ref={homeRef}>
-      <Header refs={[homeRef, projectsRef, contactRef]}/>
+      {/* {}<Header refs={handleRefs}/> */}
+      <div className="relative w-screen">
+            <div className="flex justify-evenly items-center m-8">
+                {links.map((link, index) => {
+                    return (
+                    <button
+                        key={index}
+                        onClick={() => handleRefs(index)}
+                        className="m-auto w-1/3 cursor-pointer"
+                    >
+                        <p className="white text-center">{link.name}</p>
+                    </button>
+                    )
+                })}
+            </div>
+        </div>
     </div>
 
     {/* Presentation */}
