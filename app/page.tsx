@@ -92,8 +92,8 @@ export default function Home() {
       <Image src={"/photo_rond.png"} alt={"Photo de Freddy Maupou"} width={250} height={100}/>
       <h1 className="m-5 text-2xl">Freddy Maupou - <span className="italic">Développeur Full Stack</span></h1>
       <p className="w-1/2 text-justify text-last-center">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus culpa, esse eius maiores laborum eos tempora recusandae minima illo dolorem numquam voluptatibus
-       dignissimos libero adipisci commodi vitae illum similique fugit.
+      Passionné par la programmation depuis quelques années déjà, j&apos;ai obtenu un Bac +3 en Programmation Gameplay dans le domaine des Jeux Vidéo. Aujourd&apos;hui, je me reconvertis 
+      en tant que Développeur Full Stack et je suis prêt à collaborer avec vous et découvrir les challenges que nous aborderons ensemble !
       </p>
     </div>
 

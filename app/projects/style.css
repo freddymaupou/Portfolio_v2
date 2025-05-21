@@ -57,8 +57,32 @@
     }
 }
 
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(500px);
+        display: flex;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutRight {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(500px);
+        display: none;
+    }
+}
+
 .images {
-    object-fit: contain;
+    max-height: 400px;
     width: auto;
 }
 
@@ -70,6 +94,16 @@
 .fade-in-right {
     z-index: 1;
     animation: fadeInRight 0.5s both;
+}
+
+.fade-in-left {
+    z-index: 1;
+    animation: fadeInLeft 0.5s both;
+}
+
+.fade-out-right {
+    z-index: -1;
+    animation: fadeOutRight 0.5s both;
 }
 
 li {

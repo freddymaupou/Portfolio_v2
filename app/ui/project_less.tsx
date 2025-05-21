@@ -14,24 +14,33 @@ export default function ProjectLess(props: {projectID: Project}){
 
     return (
         <>
-            <div className="flex justify-evenly items-center flex-1/2 flex-col mt-6">
-                <div className="relative mx-6">
-                    <div className="flex-1/2 w-full h-full" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
-                        <Image className="images" style={isHovering ? {opacity: "30%"} : {opacity: "100%"}} src={props.projectID.srcImg} alt={"Oui"} width={1920} height={1080}/>
-                        {isHovering &&
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                            <p className="text-justify text-last-center">{props.projectID.pitch}</p>
-                            <div className="flex items-end justify-between flex-row">
-                                <div></div>
-                                <button className="cursor-pointer text-2xl rounded-[50%] border border-white" onClick={() => handleClick()}>+</button>                
+            {props.projectID.id % 2 !== 0 &&
+                <ProjectMore isShow={isShowMore} id={props.projectID.id} title={props.projectID.title} details={props.projectID.details} tasks={props.projectID.tasks} projLink={props.projectID.extLink} showLess={handleClick} />
+            }
+            <div className="flex justify-evenly items-center flex-1/2 flex-col mt-6 h-[400]">
+                <div className="mx-6">
+                    <div className="flex justify-between items-start">
+                        <div className="flex-1/2 w-full h-full relative" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
+                            <Image className="images" style={isHovering ? {opacity: "30%"} : {opacity: "100%"}} src={props.projectID.srcImg} alt={"Oui"} width={1920} height={1080}/>
+                            {isHovering &&
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full p-4">
+                                <p className="text-justify text-last-center ">{props.projectID.pitch}</p>
+                                <div className={isShowMore ? "hidden" : "flex items-end justify-between flex-row"}>
+                                    <div></div>
+                                    <button className="cursor-pointer" onClick={() => handleClick()}>
+                                        <Image src={"/more.png"} alt={"Afficher plus d'informations"} width={40} height={40} />
+                                    </button>                
+                                </div>
                             </div>
+                            }
                         </div>
-                        }
+                        <Picto techs={props.projectID.techs}/>
                     </div>
-                    <Picto techs={["Unity", "C#"]}/>
                 </div>
             </div>
-            <ProjectMore isShow={isShowMore} title={props.projectID.title} details={props.projectID.details} tasks={props.projectID.tasks} projLink={props.projectID.extLink} showLess={handleClick} />
+            {props.projectID.id % 2 === 0 &&
+                <ProjectMore isShow={isShowMore} id={props.projectID.id} title={props.projectID.title} details={props.projectID.details} tasks={props.projectID.tasks} projLink={props.projectID.extLink} showLess={handleClick} />
+            }
         </>
     )
 }
