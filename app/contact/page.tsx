@@ -1,7 +1,6 @@
 'use client'
 
 import "@/app/contact/style.css"
-import { sendEmail } from "@/lib/resend";
 import { ChangeEvent, CSSProperties, useState } from "react";
 
 export default function Contact(){
@@ -45,9 +44,9 @@ export default function Contact(){
             }
         }
 
-        console.log("Mail : " + textMail);
+      /*   console.log("Mail : " + textMail);
         console.log("Suject : " + textSubject);
-        console.log("Message : " + textMessage);
+        console.log("Message : " + textMessage) */;
 
         checkTexts();
     }
@@ -63,13 +62,31 @@ export default function Contact(){
     }
 
     // put it in component server
-    function sendMail(){
-        sendEmail(textMail, textSubject, textMessage);
+    const fetchDataFromApi = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await fetch("/api/send",{
+                method: "POST",
+                headers:{
+                    'Content-Type': "application/json", // application/x-www-form-urlencoded
+                },
+            });
+            if(response){
+                const data = await response.json();
+                console.log(data)
+            }
+        } catch(error){
+            console.log(error)
+        } finally {
+            console.log("done")
+        }
     }
+    //sendEmail(textMail, textSubject, textMessage);
+    
 
     return (
     <>
-    <form action={sendMail} className="flex flex-col items-center">
+    <form className="flex flex-col items-center">
         <div className="flex justify-between w-[300]">
             <label>
                 E-mail: 
@@ -89,7 +106,7 @@ export default function Contact(){
             <input type="textarea" name="message" id="input_message" className="input_text" onChange={(e) => fillText(e, "Message")} value={textMessage} required/>
         </div>
 
-        <button style={btnDisable} className="border rounded-md p-2 px-4 white" type="submit" disabled={disableBtn}>Envoyer</button>
+        <button style={btnDisable} className="border rounded-md p-2 px-4 white"  type="submit" disabled={disableBtn} onClick={(e) => fetchDataFromApi(e)}>Envoyer</button>
     </form>
     </>
     );
