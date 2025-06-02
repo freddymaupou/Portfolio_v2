@@ -1,7 +1,7 @@
 'use client'
 
 import "@/app/contact/style.css"
-import { ChangeEvent, CSSProperties, useState } from "react";
+import { ChangeEvent, CSSProperties, MouseEvent, useState } from "react";
 
 export default function Contact(){
     const [disableBtn, setDisableBtn] = useState<boolean>(true);
@@ -62,7 +62,7 @@ export default function Contact(){
     }
 
     // put it in component server
-    const fetchDataFromApi = async (e) => {
+    const fetchDataFromApi = async (e: MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.preventDefault();
         try {
             const response = await fetch("/api/send",{
