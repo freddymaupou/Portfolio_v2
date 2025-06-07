@@ -17,7 +17,7 @@ export type Project = {
 
 const allP: Project[] = [
     {
-        srcImg: "/the_frozen_barrel.jpg",
+        srcImg: "/static/the_frozen_barrel.jpg",
         extLink: "https://freddym.itch.io/the-frozen-barrel",
         title: "The Frozen Barrel - Lead Gameplay Programmer",
         details: "7 personnes - 1 mois",
@@ -28,7 +28,7 @@ const allP: Project[] = [
         id: 0
     },
     {
-        srcImg: "/fill_it.png",
+        srcImg: "/static/fill_it.png",
         extLink: "https://freddym.itch.io/fill-it",
         title: "Fill It! - Gameplay Programmer",
         details: "Solo - 1 semaine",
@@ -39,7 +39,7 @@ const allP: Project[] = [
         id: 1
     },
     {
-        srcImg: "/shovel_hell.jpg",
+        srcImg: "/static/shovel_hell.jpg",
         extLink: "https://somegame94.itch.io/shovel-hell",
         title: "Shovel Hell - Lead Gameplay Programmer",
         details: "12 personnes - 4 mois",
@@ -51,7 +51,7 @@ const allP: Project[] = [
         id: 2
     },
     {
-        srcImg: "/game_hatch.jpg",
+        srcImg: "/static/game_hatch.jpg",
         extLink: "https://xaltio.itch.io/game-hatch",
         title: "Game & Hatch - Gameplay Programmer",
         details: "8 personnes - 3 jours",
@@ -62,7 +62,7 @@ const allP: Project[] = [
         id: 3
     },
     {
-        srcImg: "/dont_mess_with_vampires.png",
+        srcImg: "/static/dont_mess_with_vampires.png",
         extLink: "https://somegame94.itch.io/dont-mess-with-vampire",
         title: "Don't Mess With Vampires - Gameplay Programmer",
         details: "9 personnes - 2 mois",
@@ -73,7 +73,7 @@ const allP: Project[] = [
         id: 4
     },
     {
-        srcImg: "/eva.jpg",
+        srcImg: "/static/eva.jpg",
         extLink: "https://rpahel.itch.io/eva",
         title: "Eva - Gameplay Programmer",
         details: "4 personnes - 4 mois",
@@ -84,7 +84,7 @@ const allP: Project[] = [
         id: 5
     },
     {
-        srcImg: "/olympos_drama.jpg",
+        srcImg: "/static/olympos_drama.jpg",
         extLink: "https://frogat.itch.io/olympos-drama",
         title: "Olympos Drama - Gameplay Programmer",
         details: "12 personnes - 3 jours",
@@ -95,7 +95,7 @@ const allP: Project[] = [
         id: 6
     },
     {
-        srcImg: "/ou_est_gil.jpg",
+        srcImg: "/static/ou_est_gil.jpg",
         extLink: "https://artyu.itch.io/ou-est-lig",
         title: "Où est Gil ? - Gameplay Programmer",
         details: "2 personnes - 2 mois",
@@ -106,7 +106,7 @@ const allP: Project[] = [
         id: 7
     },
     {
-        srcImg: "/tonatiuh_itza.png",
+        srcImg: "/static/tonatiuh_itza.png",
         extLink: "https://xaltio.itch.io/tonatiuh-itza",
         title: "Tonatiuh Itza - Lead Gameplay Programmer",
         details: "5 personnes - 3 mois",
@@ -118,7 +118,7 @@ const allP: Project[] = [
         id: 8
     },
     {
-        srcImg: "/mega_black_hole.jpg",
+        srcImg: "/static/mega_black_hole.jpg",
         extLink: "https://artyu.itch.io/mega-black-hole",
         title: "Mega Black Hole - Gameplay Programmer & Game Designer",
         details: "3 personnes - 1 mois",
@@ -129,7 +129,7 @@ const allP: Project[] = [
         id: 9
     },
     {
-        srcImg: "/doompa_loompa.jpg",
+        srcImg: "/static/doompa_loompa.jpg",
         extLink: "https://nicolas-blois.itch.io/doompa-loompa",
         title: "Doompa Loompa - Gameplay Programmer",
         details: "11 personnes - 4 jours",
