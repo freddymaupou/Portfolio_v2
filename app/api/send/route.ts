@@ -6,11 +6,11 @@ import { EmailTemplate }from "@/components/email-template"
 const resend = new Resend(process.env.RESEND_API_KEY);
 const myMail = process.env.MY_MAIL || [];
 
-export async function POST(request: Request, response: Response) {
+export async function POST() {
   try {
     //console.log("body: " + response.json())
-    const body = (await response.formData()).entries();
-    console.log(body)
+    //const body = (await response.formData()).entries();
+    //console.log(body)
 
     const { data, error } = await resend.emails.send({
       from: 'Acme <onboarding@resend.dev>',
