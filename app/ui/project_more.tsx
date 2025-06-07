@@ -29,6 +29,7 @@ export default function ProjectMore(props : {isShow: boolean, id: number, title:
                 <h2 className="italic">{props.details}</h2><br />
             </div>
             <ul className="mb-8">
+                <p className="text-2xl"><u><i><strong>Tâches réalisées :</strong></i></u></p>
                 {
                     props.tasks.map((task, index) => (
                         <li key={index}>- {task}</li>

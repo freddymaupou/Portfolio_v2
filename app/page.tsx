@@ -100,12 +100,20 @@ export default function Home() {
     {/* Projects */}
     <div ref={projectsRef} className="border-b-4 pt-10 pb-20">
       <h1 className="text-4xl text-center mb-10">Projets</h1>
+      <h2 className="px-50 text-center text-last-center">Ci-dessous, vous trouverez mes projets en Jeux Vidéo créés en équipe durant ces dernières années. 
+      Tous ces projets sont téléchargeables et jouables via la plateforme Itch.io.<br/>
+      Bonnes découvertes et amusez-vous bien !</h2>
       <Projects/>
     </div>
 
     {/* Contact */}
     <div ref={contactRef} className="border-b-- pt-10 pb-20">
       <h1 className="m-5 text-4xl text-center">Contact</h1>
+      <h2 className="px-50 text-center text-last-center">Besoin d&apos;aide pour un projet ? Vous souhaitez collaborer avec moi ? Ou alors que nous nous rencontrions pour discuter 
+        d&apos; un poste chez vous ?<br/>
+        Je vous invite alors à remplir ce formulaire de contact ci-dessous et je vous recontacterai dès que possible !<br/>
+        Au plaisir de travailler avec vous !
+      </h2>
       <Contact/>
     </div>
 

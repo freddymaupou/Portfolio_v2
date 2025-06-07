@@ -12,7 +12,6 @@ export default function Contact(){
 
     function fillText(event: ChangeEvent<HTMLInputElement>, type: string){
         const txt = event.target.value;
-        console.log(txt)
 
         if(txt != ""){
             switch(type){
@@ -44,10 +43,6 @@ export default function Contact(){
             }
         }
 
-      /*   console.log("Mail : " + textMail);
-        console.log("Suject : " + textSubject);
-        console.log("Message : " + textMessage) */;
-
         checkTexts();
     }
 
@@ -66,11 +61,14 @@ export default function Contact(){
     const fetchDataFromApi = async (e: any) => {
         e.preventDefault();
         try {
+            const form: HTMLFormElement = document.getElementById("contact_form") as HTMLFormElement;
+            const formData = new FormData(form);
             const response = await fetch("/api/send",{
                 method: "POST",
                 headers:{
-                    'Content-Type': "application/json", // application/x-www-form-urlencoded
+                    'Content-Type': "multipart/form-data", // application/x-www-form-urlencoded
                 },
+                body: JSON.stringify({"mail": formData.get("mail"), "subject": formData.get("subject"), "message": formData.get("message")}),
             });
             if(response){
                 const data = await response.json();
@@ -82,12 +80,11 @@ export default function Contact(){
             console.log("done")
         }
     }
-    //sendEmail(textMail, textSubject, textMessage);
     
 
     return (
     <>
-    <form className="flex flex-col items-center">
+    <form id="contact_form" className="flex flex-col items-center">
         <div className="flex justify-between w-[300]">
             <label>
                 E-mail: 
