@@ -83,6 +83,9 @@ export default function Home() {
                     </button>
                     )
                 })}
+                 <a href="/CV_FreddyMaupou.pdf" target="_blank" rel="noopener noreferrer">
+                 <Image src="/download.png" alt="télécharger le CV" width={40} height={40}/>
+                 CV</a>
             </div>
         </div>
     </div>
