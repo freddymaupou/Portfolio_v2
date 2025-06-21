@@ -61,24 +61,25 @@ export default function Contact(){
     const fetchDataFromApi = async (e: any) => {
         e.preventDefault();
         try {
-            const form: HTMLFormElement = document.getElementById("contact_form") as HTMLFormElement;
-            const formData = new FormData(form);
-            const response = await fetch("/api/send",{
+            const formData = new FormData();
+            formData.set("mail", textMail);
+            formData.set("subject", textSubject);
+            formData.set("message", textMessage);
+
+            //console.log(formData)
+
+            /* const response =  */
+            await fetch("/api/send",{
                 method: "POST",
-                headers:{
-                    'Content-Type': "multipart/form-data", // application/x-www-form-urlencoded
-                },
-                body: JSON.stringify({"mail": formData.get("mail"), "subject": formData.get("subject"), "message": formData.get("message")}),
-            });
-            if(response){
-                const data = await response.json();
-                console.log(data)
-            }
+                body: formData,
+            }).then(res => res.json());
+
+            //console.log('response from API:', response)
         } catch(error){
             console.log(error)
-        } finally {
-            console.log("done")
-        }
+        } /* finally {
+            console.log("sent")
+        } */
     }
     
 
