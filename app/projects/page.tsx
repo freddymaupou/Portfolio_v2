@@ -33,7 +33,7 @@ const allP: Project[] = [
         title: "Fill It! - Gameplay Programmer",
         details: "Solo - 1 semaine",
         year: 2023,
-        tasks: ["First Task", "Gamefeel", "Animation"],
+        tasks: ["Gameplay", "Gamefeel", "Animation"],
         pitch: "Drag and drop all the pieces into the grid in order to fill it completely!",
         techs: ["Unity", "C#"],
         id: 1
@@ -79,7 +79,7 @@ const allP: Project[] = [
         details: "4 personnes - 4 mois",
         year: 2022,
         tasks: ["Lancer un bonbon afin d'occuper les ennemis", "Lampe du joueur / déplacement", "Mort du joueur", "Sound Design", "Game Design",],
-        pitch: "TO DO",
+        pitch: "Enrole Eva trapped in an endless stairwell containing many doors trying to find her way home.",
         techs: ["Unity", "C#"],
         id: 5
     },

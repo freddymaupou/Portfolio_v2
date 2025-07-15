@@ -1,6 +1,5 @@
 'use client'
 
-//import Header from "./components/header/page";
 import Image from "next/image";
 import Projects from "./projects/page";
 import Contact from "./contact/page";
@@ -59,7 +58,7 @@ export default function Home() {
     <>
     {!isTop && 
     <div className="fixed h-full w-full z-2 pointer-events-none">
-        <button className="cursor-pointer absolute right-15 bottom-20 pointer-events-auto" onClick={() => {
+        <button className="cursor-pointer absolute right-15 bottom-20 pointer-events-auto p-3 border rounded-2xl" onClick={() => {
           window.scroll({
             top: 0,
             behavior: 'smooth'
@@ -77,16 +76,19 @@ export default function Home() {
                     <button
                         key={index}
                         onClick={() => handleRefs(index)}
-                        className="m-auto w-1/3 cursor-pointer"
+                        className="cursor-pointer"
                     >
-                        <p className="white text-center">{link.name}</p>
+                        <div className="white text-center text-4xl hover:*:opacity-100">{link.name}
+                          <p className="border-b-3 opacity-0"></p>
+                        </div>
                     </button>
                     )
                 })}
-                 <a href="/CV_FreddyMaupou.pdf" target="_blank" rel="noopener noreferrer">
-                 <Image src="/download.png" alt="télécharger le CV" width={40} height={40}/>
-                 CV</a>
             </div>
+                  <a href="/CV_FreddyMaupou.pdf" target="_blank" rel="noopener noreferrer" className="text-center absolute top-0 right-25">
+                    <Image src="/download.png" alt="télécharger le CV" width={40} height={40}/>
+                    CV
+                  </a>
         </div>
     </div>
 
