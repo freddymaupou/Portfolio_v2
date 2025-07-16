@@ -78,8 +78,8 @@ export default function Home() {
                         onClick={() => handleRefs(index)}
                         className="cursor-pointer"
                     >
-                        <div className="white text-center text-4xl hover:*:opacity-100">{link.name}
-                          <p className="border-b-3 opacity-0"></p>
+                        <div className="white text-center text-4xl hover:*:border-b-3 hover:*:animate-[underlineAnim_0.3s_ease-in]">{link.name}
+                          <div className="h-[3px]"></div>
                         </div>
                     </button>
                     )
